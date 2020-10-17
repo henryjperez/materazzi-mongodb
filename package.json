@@ -3,7 +3,7 @@
   "author": "Henry J. Perez <henryjosiasperezrangel@gmail.com>",
   "version": "0.0.1",
   "private": true,
-  "repository": "https://github.com/henryjperez/materazzi-mongodb",
+  "homepage": "https://github.com/henryjperez/materazzi-mongodb",
   "description": "A npm package planed to provide a mongoDB model in a fast and efficiant way.",
   "main": "index.js",
   "scripts": {
