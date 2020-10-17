@@ -1,0 +1,15 @@
+{
+  "name": "materazzi-db",
+  "author": "Henry J. Perez <henryjosiasperezrangel@gmail.com>",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A npm package planed to provide a mongoDB model in a fast and efficiant way.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongodb"
+  ],
+  "license": "GPL-3.0"
+}
