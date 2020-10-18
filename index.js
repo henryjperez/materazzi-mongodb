@@ -1,3 +1,4 @@
+exports.mongoConnection = require('./mongodb-connection.js');
 exports.User = require('./models/users.js');
 exports.Restaurant = require('./models/restaurants.js');
 exports.Menu = require('./models/menus.js');
