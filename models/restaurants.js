@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const { calcRating } = require('./methods/restaurantsMethods.js');
 
-const { default_restaurants_profile } = require('../config/global_variables.js');
+const { default_restaurants_profile } = require('../config');
 
 const restaurantSchema = new Schema({
 	name: {

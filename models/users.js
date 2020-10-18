@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const { default_users_profile } = require('../config/global_variables.js');
+const { default_users_profile } = require('../config');
 
 const userSchema = new Schema({
 	email: {

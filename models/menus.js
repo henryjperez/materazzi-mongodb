@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const { default_menus_img } = require('../config/global_variables.js');
+const { default_menus_img } = require('../config');
 
 const menuSchema = new Schema({
 	name: String,
