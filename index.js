@@ -6,3 +6,5 @@ exports.MenuItem = require('./models/menuItems.js');
 exports.Comment = require('./models/comments.js');
 exports.Deliverer = require('./models/deliverers.js');
 exports.Order = require('./models/orders.js');
+exports.Channel = require('./models/channels.js');
+exports.Message = require('./models/messages.js');

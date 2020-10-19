@@ -3,8 +3,15 @@ const { default_users_profile } = require('../config');
 
 const userSchema = new Schema({
 	email: {
+		trim: true,
 		type: String,
 		require: true,
+		unique: true
+	},
+	username: {
+		type: String,
+		require: true,
+		trim: true,
 		unique: true
 	},
 	password: {
@@ -35,6 +42,10 @@ const userSchema = new Schema({
 	    	type: [Number]
 	    }
 	},
+	channels: [{
+		type: Schema.Types.ObjectId,
+		ref: 'Channel'
+	}],
 	account_type: { // this is to identify the what type of user is on the login
 		type: String, // the valid inputs (so far) are:
 		default: "normal" // "normal", "deliverer" and "restaurant";
