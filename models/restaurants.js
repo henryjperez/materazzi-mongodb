@@ -10,6 +10,12 @@ const restaurantSchema = new Schema({
 		unique: true,
 		trim: true
 	},
+	public_id: {
+		type: String,
+		require: true,
+		trim: true,
+		unique: true
+	},
 
 	password: String,
 

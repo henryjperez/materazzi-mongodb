@@ -14,6 +14,12 @@ const userSchema = new Schema({
 		trim: true,
 		unique: true
 	},
+	public_id: {
+		type: String,
+		require: true,
+		trim: true,
+		unique: true
+	},
 	password: {
 		type: String
 	},

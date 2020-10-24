@@ -6,6 +6,12 @@ const delivererSchema = new Schema({
 		ref: 'User'
 	},
 	vehicle: String,
+	public_id: {
+		type: String,
+		require: true,
+		trim: true,
+		unique: true
+	},
 	
 	deliveries: [{
 		type: Schema.Types.ObjectId,
