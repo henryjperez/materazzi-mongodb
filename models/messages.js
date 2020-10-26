@@ -20,7 +20,7 @@ const messageSchema = new Schema({
 	},
 	holder: {
 		type: String,
-		require: true.
+		require: true,
 		enum: ['Chat', 'Channel'],
 	},
 
