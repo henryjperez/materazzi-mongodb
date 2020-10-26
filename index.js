@@ -1,4 +1,4 @@
-exports.mongoConnection = require('./mongodb-connection.js');
+exports.mongoConnection = require('./connection.js');
 exports.User = require('./models/users.js');
 exports.Restaurant = require('./models/restaurants.js');
 exports.Menu = require('./models/menus.js');
@@ -7,4 +7,5 @@ exports.Comment = require('./models/comments.js');
 exports.Deliverer = require('./models/deliverers.js');
 exports.Order = require('./models/orders.js');
 exports.Channel = require('./models/channels.js');
+exports.Chat = require('./models/chats.js');
 exports.Message = require('./models/messages.js');

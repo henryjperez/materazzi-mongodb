@@ -2,26 +2,27 @@ const { Schema, model } = require('mongoose');
 
 const messageSchema = new Schema({
 	author: {
-		type: String,
-		require: true,
-
+		type: Schema.Types.ObjectId,
+		ref: 'User',
 	},
 	content: {
 		type: String,
 		require: true
-		
 	},
-	date: {
-		type: Date,
-		default: Date.now
-		
+	picture: {
+		trim: true,
+		type: String,
 	},
-	channel: {
+	on: {
 		type: Schema.Types.ObjectId,
-		ref: 'Channel',
-		require: true
-
-	}
+		refPath: 'holder',
+		require: true,
+	},
+	holder: {
+		type: String,
+		require: true.
+		enum: ['Chat', 'Channel'],
+	},
 
 }, {
 	timestamps: true

@@ -8,12 +8,6 @@ const userSchema = new Schema({
 		require: true,
 		unique: true
 	},
-	username: {
-		type: String,
-		require: true,
-		trim: true,
-		unique: true
-	},
 	public_id: {
 		type: String,
 		require: true,
@@ -23,19 +17,19 @@ const userSchema = new Schema({
 	password: {
 		type: String
 	},
-
 	given_name: {
+		trim: true,
 		type: String,
 		default: "New User",
 	},
-	
-	family_name: String,
-
+	family_name: {
+		trim: true,
+		type: String,
+	},
 	picture: {
 		type: String,
 		default: default_users_profile,
 	},
-
 	address: {
 		type: String
 	},
@@ -48,14 +42,20 @@ const userSchema = new Schema({
 	    	type: [Number]
 	    }
 	},
+	account_type: { // this is to identify the what type of user is on the login
+		type: String, // the valid inputs (so far) are:
+		default: "normal" // "normal", "deliverer" and "restaurant";
+	},
+
+	// materazzi-messenger
 	channels: [{
 		type: Schema.Types.ObjectId,
 		ref: 'Channel'
 	}],
-	account_type: { // this is to identify the what type of user is on the login
-		type: String, // the valid inputs (so far) are:
-		default: "normal" // "normal", "deliverer" and "restaurant";
-	}
+	chats: [{
+		type: Schema.Types.ObjectId,
+		ref: 'Chat'
+	}],
 }, {
 	timestamps: true
 

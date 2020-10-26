@@ -1,27 +1,21 @@
-const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
 
-
-async function connection(URI = "mongodb://localhost:27017/",) {
-	const mongoClient = new MongoClient (URI,{
-		useUnifiedTopology: true,
-		auto_reconnect: true,
-	});
-	console.log(mongoClient);
+function mongoConnection(mongodb_uri) {
+	mongoose
+		.connect(mongodb_uri, {
+			useNewUrlParser: true,
+			useCreateIndex: true,
+			useFindAndModify: false,
+			useUnifiedTopology: true
 	
-	try {
-		const p = await mongoClient.connect();
-		console.log("funciona!");
-		
-		const result = await mongoClient.db("test").collection("j").insertOne({q: "perro"});
-		//const databasesList = await mongoClient.db().admin().listDatabases();
-		console.log(result)
-		
-	} catch(err) {
-		console.log("fail");
-		console.error(err);
-	} finally {
-		mongoClient.close();
-	}
+		})
+		.then(() => console.log('Database connected on => ' + mongodb_uri))
+		.catch(error => console.log('ERROR DATABASE ===> ', error, ' <=== ERROR DATABASE'));
+
+	mongoose.connection.once('open', () => {
+		console.log('MaterazziDB is on the House');
+	
+	});
 }
 
-module.exports = connection;
+module.exports = mongoConnection;
