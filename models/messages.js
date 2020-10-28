@@ -7,13 +7,13 @@ const messageSchema = new Schema({
 	},
 	content: {
 		type: String,
-		require: true
+		require: true,
 	},
 	picture: {
 		trim: true,
 		type: String,
 	},
-	on: {
+	recipient: {
 		type: Schema.Types.ObjectId,
 		refPath: 'holder',
 		require: true,
