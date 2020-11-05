@@ -14,12 +14,16 @@ const channelSchema = new Schema({
 	users: [{
 		type: Schema.Types.ObjectId,
 		ref: 'User',
-		require: true
+		require: true,
 	}],
 	messages: [{
 		type: Schema.Types.ObjectId,
-		ref: 'Message'
+		ref: 'Message',
 	}],
+	admin: {
+		type: Schema.Types.ObjectId,
+		ref: 'User',
+	},
 	
 }, {
 	timestamps: true

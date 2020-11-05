@@ -2,21 +2,6 @@ const { Schema, model } = require('mongoose');
 const { default_users_profile } = require('../config');
 
 const userSchema = new Schema({
-	email: {
-		trim: true,
-		type: String,
-		require: true,
-		unique: true
-	},
-	public_id: {
-		type: String,
-		require: true,
-		trim: true,
-		unique: true
-	},
-	password: {
-		type: String
-	},
 	given_name: {
 		trim: true,
 		type: String,
@@ -26,9 +11,24 @@ const userSchema = new Schema({
 		trim: true,
 		type: String,
 	},
+	email: {
+		trim: true,
+		type: String,
+		require: true,
+		unique: true
+	},
 	picture: {
 		type: String,
 		default: default_users_profile,
+	},
+	public_id: {
+		type: String,
+		require: true,
+		trim: true,
+		unique: true
+	},
+	password: {
+		type: String
 	},
 	address: {
 		type: String
