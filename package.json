@@ -18,6 +18,6 @@
   ],
   "license": "GPL-3.0",
   "dependencies": {
-    "mongoose": "5.10.10"
+    "mongoose": "5.10.14"
   }
 }

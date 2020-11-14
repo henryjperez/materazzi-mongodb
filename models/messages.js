@@ -13,6 +13,17 @@ const messageSchema = new Schema({
 		trim: true,
 		type: String,
 	},
+	public_id: {
+		type: String,
+		require: true,
+		trim: true,
+		unique: true
+	},
+	alive: {
+		type: Boolean,
+		require: true,
+		default: true,
+	},
 	recipient: {
 		type: Schema.Types.ObjectId,
 		refPath: 'holder',
